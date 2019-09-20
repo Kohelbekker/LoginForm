@@ -3,6 +3,12 @@ var inp2 = document.getElementsByClassName("login-input-field")[1];
 var email = document.getElementById('email');
 var pass = document.getElementById('pass');
 
+function Test() {
+    let re="KEK LOL";
+    console.log(re);
+    console.log("WASAP?");
+}
+
 function validateEmail(email) {
     let re = /[\w._%+-]+@[\w.-]+\.[a-zA-z]{2,4}$/;
     return re.test(String(email).toLowerCase());

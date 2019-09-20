@@ -35,7 +35,7 @@
                                 <i class="fas fa-user"></i>
                             </div>
                             <div class="login-reg-input">
-                                <input autofocus type="text" name="email" id="email" class="login-input-field" placeholder="Email" required> 
+                                <input autofocus onkeyup="Test" type="text" name="email" id="email" class="login-input-field" placeholder="Email" required> 
                             </div> 
                         </div>
                         <div id="input2" class="login-reg-inline">
@@ -83,7 +83,40 @@
                     </div>
         
             </div>
-        
+            
+            <div class="modal-butt-modal-cont"> 
+                <span class="login-butt-modal-close">&times;</span>
+                
+                <div class="login-bigLogo">
+                    <img class="login-imgLogo" src="./src/images/Rectangle.png" alt="">
+                </div>
+
+                <div class="login-h2">
+                    <h2 class="login-Login">Create your account</h2>
+                </div>
+
+
+                <div class="login-reg">
+                    <div id="input1" class=login-reg-inline>
+                        <div class="login-reg-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="login-reg-input">
+                            <input autofocus type="text" name="email" id="email" class="login-input-field" placeholder="Email" required> 
+                        </div> 
+                    </div>
+                    <div id="input2" class="login-reg-inline">
+                        <div class="login-reg-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="login-reg-input">
+                            <input autofocus type="password" name="pass" id="pass" class="login-input-field" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <p><a>Forgot Password?</a></p>
+                </div>
+            </div>
+                 
         </div> 
    
     <script src="./src/js/modal.js"></script>
