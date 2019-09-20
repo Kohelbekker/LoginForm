@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="login-reg">
-                        <div class=login-reg-inline>
+                        <div id="input1" class=login-reg-inline>
                             <div class="login-reg-icon">
                                 <i class="fas fa-user"></i>
                             </div>
@@ -38,7 +38,7 @@
                                 <input autofocus type="text" name="email" id="email" class="login-input-field" placeholder="Email" required> 
                             </div> 
                         </div>
-                        <div class="login-reg-inline">
+                        <div id="input2" class="login-reg-inline">
                             <div class="login-reg-icon">
                                 <i class="fas fa-lock"></i>
                             </div>
@@ -48,9 +48,13 @@
                         </div>
                         <p><a>Forgot Password?</a></p>
                     </div>
+                    
+                    <div id="Error" class="login-reg-error">
+                        <p>Invalid Email or Password. Please, check if your password has at least one uppercase character, lowercase character, special symbol and digit. Summarily your password shouldn't be less than 8 charcters.</p>
+                    </div>
 
                     <div class="login-bttnLogin">
-                        <button class="login-mainBttn">Login</button>
+                        <button id="Login" class="login-mainBttn" disabled>Login</button>
                         <p>Do not have an account? <a>Signup</a></p>
                     </div>
 
@@ -81,8 +85,9 @@
             </div>
         
         </div> 
-    
+   
     <script src="./src/js/modal.js"></script>
+    <script src="./src/js/red_border.js"></script>
     </header>
 </body>
 </html>

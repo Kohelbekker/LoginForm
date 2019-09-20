@@ -1,4 +1,7 @@
-$color: green;
+// $backg_col: green;
+// $main_col: ;
+// $small_text: ;
+// $onfocus_col: ;
 
 html body {
     margin: 0; 
@@ -79,7 +82,7 @@ hr {
     padding: 20px;
     border: 1px solid #888; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: 25%;
+    width: 20%;
 }
 
 .login-butt-modal-close {
@@ -122,7 +125,7 @@ hr {
 
 .login-reg {
     margin: 15px auto;
-    margin-bottom: 75px;
+    margin-bottom: 8px;
     width: 85%;
     text-align: center;
     p {
@@ -142,6 +145,17 @@ hr {
     i {
         font-size: 0.5em;
         color: white;
+    }
+}
+
+.login-reg-error {
+    visibility: hidden;
+    width: 85%;
+    margin: 10px auto;
+    text-align: center;
+    p {
+        font-size: 12px;
+        color: #E84A5F;
     }
 }
 
@@ -175,9 +189,11 @@ hr {
     margin: 0px auto;
     width: 95%;
     border: none;
-    height: 25px;
+    height: 25px; 
+    -webkit-box-shadow: inset 0 0 0 50px #2A363B;
+    -webkit-text-fill-color: rgba(238, 238, 238, 0.7);
     &:focus::placeholder{
-       color:transparent;
+       color: transparent;
   }
     &:focus {
         outline: none;
@@ -217,6 +233,7 @@ hr {
     border: none;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.5);
+    outline: none;
 }
 
 .login-orlines {
@@ -236,7 +253,7 @@ hr {
     h2 {
         font-weight: 400;
         margin: 0;
-        color: #EEEEEE;
+        color: #eeeeee;
         font-size: 22px;
         line-height: 30px;
     }
