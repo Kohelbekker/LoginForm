@@ -2,6 +2,8 @@
 // $main_col: ;
 // $small_text: ;
 // $onfocus_col: ;
+$smaller: 905px;
+$small: 1390px;
 
 html body {
     margin: 0; 
@@ -284,4 +286,25 @@ hr {
 
 .fab {
     font-size: 2.2em;
+}
+
+@media (max-width: $small) {
+    .login-share-icon i {
+        font-size: 1.5em;
+    }
+    .login-reg-icon {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: $smaller) {
+    .login-bigLogo {
+        display: none;
+    }
+    .login-share-icon i {
+        font-size: 0.8em;
+    }
+    .login-reg-icon {
+        font-size: 0.5em;
+    }
 }
