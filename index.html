@@ -9,119 +9,109 @@
     <link rel="shortcut icon" type="" href="./src/images/favicon.png"/>
 </head>
 <body>
+    
     <header>
-        <div class="login-logo">
+   
+        <div class="mainLogo">
             <img src="/src/images/logo.svg" alt="logo">
         </div>
-        <div class="login-butt">
-            <button id="myBtn" class="login-butt-myBtt">Login</button> 
-            
-            <div id="myModal" class="login-butt-modal">
+
+        <div class="mainButt">
+            <button id="myBtn" class="mainButt-myBtt">Login</button> 
+        </div> 
+   
+    </header>
+
+    <main>
+        
+        <div id="myModal" class="mod">
                 
-                <div class="login-butt-modal-cont">
-                    <span class="login-butt-modal-close">&times;</span>
+                <div class="mod-cont">
+                    <span class="mod-cont-close">&times;</span>
                     
-                    <div class="login-bigLogo">
-                        <img class="login-imgLogo" src="./src/images/Rectangle.png" alt="">
+                    <div class="mod-cont-bigLogo">
+                        <img class="mod-cont-bigLogo-img" src="./src/images/Rectangle.png" alt="">
                     </div>
 
-                    <div class="login-h2">
-                        <h2 class="login-Login">Login</h2>
+                    <div>
+                        <h2 class="mod-cont-h2">Login</h2>
                     </div>
 
-                    <div class="login-reg">
-                        <div id="input1" class=login-reg-inline>
-                            <div class="login-reg-icon">
+                    <div class="mod-cont-reg">
+                        
+                        <div id="input1" class="mod-cont-reg-inputs">
+                           
+                            <div class="mod-cont-reg-inputs-icon">
                                 <i class="fas fa-user"></i>
                             </div>
-                            <div class="login-reg-input">
-                                <input autofocus onkeyup="Test" type="text" name="email" id="email" class="login-input-field" placeholder="Email" required> 
+
+                            <div class="mod-cont-reg-inputs-input">
+                                <input autofocus onkeyup="Test" type="text" name="email" id="email" class="mod-cont-reg-inputs-input-field" placeholder="Email" required> 
                             </div> 
+
                         </div>
-                        <div id="input2" class="login-reg-inline">
-                            <div class="login-reg-icon">
+
+                        <div id="input2" class="mod-cont-reg-inputs">
+                                                       
+                            <div class="mod-cont-reg-inputs-icon">
                                 <i class="fas fa-lock"></i>
                             </div>
-                            <div class="login-reg-input">
-                                <input autofocus type="password" name="pass" id="pass" class="login-input-field" placeholder="Password" required>
+                            
+                            <div class="mod-cont-reg-inputs-input">
+                                <input autofocus type="password" name="pass" id="pass" class="mod-cont-reg-inputs-input-field" placeholder="Password" required>
+                           
                             </div>
                         </div>
+                        
                         <p><a>Forgot Password?</a></p>
                     </div>
                     
-                    <div id="Error" class="login-reg-error">
+                    <div id="Error" class="mod-cont-error">
                         <p>Invalid Email or Password. Please, check if your password has at least one uppercase character, lowercase character, special symbol and digit. Summarily your password shouldn't be less than 8 charcters.</p>
                     </div>
 
-                    <div class="login-bttnLogin">
-                        <button id="Login" class="login-mainBttn" disabled>Login</button>
+                    <div class="mod-cont-bttnLogin">
+                        <button id="Login" class="mod-cont-bttnLogin-login" disabled>Login</button>
                         <p>Do not have an account? <a>Signup</a></p>
                     </div>
 
-                    <div class="login-orlines">
-                        <div class="login-lines">
+                    <div class="mod-cont-orlines">
+                        
+                        <div class="mod-cont-orlines-lines">
                             <hr>
                         </div>
-                        <div class="login-or">
+                       
+                        <div class="mod-cont-orlines-or">
                             <h2>OR</h2>  
                         </div>
-                        <div class="login-lines">
+                        
+                        <div class="mod-cont-orlines-lines">
                             <hr>
                         </div>
+                   
                     </div>
 
-                    <div class="login-share-baricon">
-                        <div class="login-share-icon">
+                    <div class="mod-cont-baricon">
+                        
+                        <div class="mod-cont-baricon-icon">
                             <a><i class="fab fa-google"></i></a>
                         </div>
-                        <div class="login-share-icon">           
+                        
+                        <div class="mod-cont-baricon-icon">           
                             <a><i class="fab fa-facebook-square"></i></a>    
                         </div>
-                        <div class="login-share-icon"> 
+                        
+                        <div class="mod-cont-baricon-icon"> 
                             <a><i class="fab fa-github-square"></i></a>
                         </div>
+                   
                     </div>
         
             </div>
             
-            <div class="modal-butt-modal-cont"> 
-                <span class="login-butt-modal-close">&times;</span>
-                
-                <div class="login-bigLogo">
-                    <img class="login-imgLogo" src="./src/images/Rectangle.png" alt="">
-                </div>
-
-                <div class="login-h2">
-                    <h2 class="login-Login">Create your account</h2>
-                </div>
-
-
-                <div class="login-reg">
-                    <div id="input1" class=login-reg-inline>
-                        <div class="login-reg-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="login-reg-input">
-                            <input autofocus type="text" name="email" id="email" class="login-input-field" placeholder="Email" required> 
-                        </div> 
-                    </div>
-                    <div id="input2" class="login-reg-inline">
-                        <div class="login-reg-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <div class="login-reg-input">
-                            <input autofocus type="password" name="pass" id="pass" class="login-input-field" placeholder="Password" required>
-                        </div>
-                    </div>
-                    <p><a>Forgot Password?</a></p>
-                </div>
-            </div>
-                 
-        </div> 
-   
+    </main>
     <script src="./src/js/modal.js"></script>
     <script src="./src/js/red_border.js"></script>
-    </header>
 </body>
 </html>
 

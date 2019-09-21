@@ -1,8 +1,9 @@
-// $backg_col: green;
-// $main_col: ;
-// $small_text: ;
-// $onfocus_col: ;
-//$smaller: 905px;
+$backg_col: #2a363b;
+$main_col: #E84A5F;
+$small_text: white;
+$onfocus_col: red;
+$transp_text: rgba(238, 238, 238, 0.7);
+$lines_color: rgba(238, 238, 238, 0.2);
 $small: 520px;
 
 html body {
@@ -12,52 +13,16 @@ html body {
 
 header { 
     position: relative;
-    background-color: #2a363b;
+    background-color: $backg_col;
     height: 64px;
     width: 100%;
 }
 
 hr {
-    color: white;
+    color: $small_text;
 }
 
-.login-butt-myBtt {
-    height: 100%;
-    width: 100%;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 18px;
-    line-height: 25px;
-    cursor:pointer;
-    color: white;
-    background-color: #2a363b;
-    border: none;
-    &:hover {
-        background-color: #E84A5F;
-        border: none;
-    }
-    &:active {
-        background-color: #E84A5F;
-        border-color: none;
-    }
-    &:focus {
-        outline: 0;
-    }
-}
-
-.login-logo {
-    display: inline-block;
-    height: 100%;
-    width: 320px;
-}
-
-.login-logo > img {
-    position: absolute;
-    top: 15%;
-    height: 48px;
-}
-
-.login-butt { 
+.mainButt { 
     width: 97px;
     height: 100%;
     position: absolute;
@@ -65,7 +30,43 @@ hr {
     display: inline-block;
 }
 
-.login-butt-modal {
+.mainButt-myBtt {
+    height: 100%;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    line-height: 25px;
+    cursor:pointer;
+    color: $small_text;
+    background-color: $backg_col;
+    border: none;
+    &:hover {
+        background-color: $main_col;
+        border: none;
+    }
+    &:active {
+        background-color: $main_col;
+        border-color: none;
+    }
+    &:focus {
+        outline: 0;
+    }
+}
+
+.mainLogo {
+    display: inline-block;
+    height: 100%;
+    width: 320px;
+}
+
+.mainLogo > img {
+    position: absolute;
+    top: 15%;
+    height: 48px;
+}
+
+.mod {
     display: none; 
     position: fixed; 
     z-index: 1;
@@ -76,10 +77,10 @@ hr {
     background-color: rgba(0,0,0,0.4);
 }
 
-.login-butt-modal-cont {
-    color: white;
+.mod-cont {
+    color: $small_text;
     border-radius: 4.5px;
-    background-color: #2a363b;
+    background-color: $backg_col;
     margin: 12vh auto;
     padding: 20px;
     border: 1px solid #888; 
@@ -87,30 +88,29 @@ hr {
     width: 420px;
 }
 
-.login-butt-modal-close {
+.mod-cont-close {
     margin-right: 0px;
     margin-top: -10px;
-    color: #E84A5F;
+    color: $main_col;
     float: right;
     font-size: 28px;
     font-weight: bold;
     &:hover, &:focus {  
-        color: red;
+        color: $onfocus_col;
         text-decoration: none;
         cursor: pointer;
     }
 }
 
-.login-Login {
-    height: 45px;
+.mod-cont-bigLogo {
+    width: 150px;
+    height: 150px;
     text-align: center;
     margin: auto;
-    margin-top: 15px;
-    color: #E84A5F;
-    text-transform: uppercase;
 }
 
-.login-imgLogo {
+
+.mod-cont-bigLogo-img {
     width: 100%;
     height: 100%;
     &:hover, &:focus {
@@ -118,14 +118,16 @@ hr {
     }
 }
 
-.login-bigLogo {
-    width: 150px;
-    height: 150px;
+.mod-cont-h2 {
+    height: 45px;
     text-align: center;
     margin: auto;
+    margin-top: 15px;
+    color: $main_col;
+    text-transform: uppercase;
 }
 
-.login-reg {
+.mod-cont-reg {
     margin: 15px auto;
     margin-bottom: 8px;
     width: 85%;
@@ -140,60 +142,60 @@ hr {
     }
     a {
         &:hover, &:focus {
-            color: #E84A5F;
+            color: $main_col;
             cursor: pointer; 
         }
     }
     i {
         font-size: 0.5em;
-        color: white;
+        color: $small_text;
     }
 }
 
-.login-reg-error {
-    visibility: hidden;
-    width: 85%;
-    margin: 10px auto;
-    text-align: center;
-    p {
-        font-size: 12px;
-        color: #E84A5F;
-    }
-}
-
-.login-reg-inline {
+.mod-cont-reg-inputs {
     display: flex;
     align-items: center;
     width: 100%;
     height: 40px;
-    border: 1px solid rgba(238, 238, 238, 0.2);
+    border: 1px solid $lines_color;
     border-radius: 4px;
     margin: 15px auto;
 }
 
-.login-reg-input {
+.mod-cont-reg-inputs-input {
     flex-basis: 80%;
     padding: 2px;
     padding-left: 4px;
-    border-left: 1px solid rgba(238, 238, 238, 0.2);
+    border-left: 1px solid $lines_color;
 }
 
-.login-reg-icon {
+.mod-cont-reg-inputs-icon {
     flex-basis: 12%;
     i {
         font-size: 1.1em;
     }
 }
 
-.login-input-field {
-    color: rgba(238, 238, 238, 0.7);
-    background-color: #2A363B;
+.mod-cont-error {
+    visibility: hidden;
+    width: 85%;
+    margin: 10px auto;
+    text-align: center;
+    p {
+        font-size: 12px;
+        color: $main_col;
+    }
+}
+
+.mod-cont-reg-inputs-input-field {
+    color: $transp_text;
+    background-color: $backg_col;
     margin: 0px auto;
     width: 95%;
     border: none;
     height: 25px; 
-    -webkit-box-shadow: inset 0 0 0 50px #2A363B;
-    -webkit-text-fill-color: rgba(238, 238, 238, 0.7);
+    -webkit-box-shadow: inset 0 0 0 50px $backg_col;
+    -webkit-text-fill-color: $transp_text;
     &:focus::placeholder{
        color: transparent;
   }
@@ -202,16 +204,16 @@ hr {
   }
 }
 
-.login-bttnLogin {    
+.mod-cont-bttnLogin {    
     margin: 0 auto;
     margin-bottom: 20px;
     width: 85%;
     text-align: center;
     a {
-        color: #E84A5F;
+        color: $main_col;
         text-transform: uppercase;
         &:hover, &:focus {
-            color: red;
+            color: $onfocus_col;
             cursor: pointer; 
         }
     }
@@ -223,7 +225,7 @@ hr {
     }
 }
 
-.login-mainBttn {
+.mod-cont-bttnLogin-login {
     width: 100%; 
     height: 40px;
     background-color: rgba(232, 74, 95, 0.5);
@@ -238,7 +240,7 @@ hr {
     outline: none;
 }
 
-.login-orlines {
+.mod-cont-orlines {
     display: flex; 
     align-items: center;
     width: 85%;
@@ -248,7 +250,7 @@ hr {
     justify-content: space-between;
 }
 
-.login-lines {
+.mod-cont-orlines-lines {
     width: 40%;
     margin: 0;
     text-align: center;
@@ -261,24 +263,24 @@ hr {
     }
     hr {
         margin: 0;
-        border: 1px solid rgba(238, 238, 238, 0.2);
+        border: 1px solid $lines_color;
     }
 }
 
-.login-or {
-    @extend .login-lines;
+.mod-cont-orlines-or {
+    @extend .mod-cont-orlines-lines;
     width: 15%;
 }
 
-.login-share-baricon {
-    @extend .login-orlines;
+.mod-cont-baricon {
+    @extend .mod-cont-orlines;
     width: 40%;
     justify-content: space-between;
     margin-bottom: 10px;
     a {
     
         &:hover, &:focus {
-            color: #E84A5F;
+            color: $main_col;
             cursor: pointer;
         } 
     }
@@ -289,23 +291,23 @@ hr {
 }
 
 .modal-new_acc {
-    @extend .login-butt-modal-cont;
+    @extend .mod-cont;
 }
 
 @media (max-width: $small) {
-    .login-bigLogo {
+    .mod-cont-bigLogo {
         display: none;
     }
-    .login-share-icon i {
+    .mod-cont-baricon-icon i {
         font-size: 1.6em;
     }
-    .login-reg-icon {
+    .mod-cont-reg-inputs-icon {
         font-size: 0.9em;
     }
-    .login-butt-modal-cont {
+    .mod-cont {
         width: 85%;
     }
-    .login-logo {
+    .mainLogo {
         display: none;
     }
 }
