@@ -1,57 +1,55 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const autoprefixer = require('autoprefixer')
+const cssnano = require('cssnano')
 
 module.exports = {
-    entry: {
-        app: './src/index.js'
-    },
+    entry: [
+      './src/index.js',
+      './src/scss/main.scss',
+    ],
     output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist'
+        path: __dirname,
+        publicPath: '/',
+        filename: 'bundle.js'
     },
     module: {
-        rules: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: '/node_modules/'
-    }, {
-        test: /\.s[ac]ss$/,
+    rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-runtime']
+          }
+        }
+      },
+      {
+        test: /\.(scss)$/,
         use: [
-            'style-loader',
-            MiniCssExtractPlugin.loader,
-            {
-                loader: 'css-loader',
-                options: { sourceMap: true }
-            }, {
-                loader: 'postcss-loader',
-                options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
-            }, {
-                loader: 'sass-loader',
-                options: { sourceMap: true }
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  require('autoprefixer')
+                ];
+              }
             }
+          },
+          {
+            loader: 'sass-loader'
+          }
         ]
-    }, {
-        test: /\.css$/,
-        use: [
-            'style-loader',
-            MiniCssExtractPlugin.loader,
-            {
-                loader: 'css-loader',
-                options: { sourceMap: true }
-            }, {
-                loader: 'postcss-loader',
-                options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
-            }
-        ]
-    }]
-    },
-    devServer: {
-        overlay: true
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: "[name].css"
-        })
-    ],
-}
+      }
+    ]
+  }
+};

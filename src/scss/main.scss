@@ -28,42 +28,42 @@ hr {
     position: absolute;
     right: 10%;
     display: inline-block;
+    &-myBtt {
+        height: 100%;
+        width: 100%;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 18px;
+        line-height: 25px;
+        cursor:pointer;
+        color: $small_text;
+        background-color: $backg_col;
+        border: none;
+        &:hover {
+            background-color: $main_col;
+            border: none;
+        }
+        &:active {
+            background-color: $main_col;
+            border-color: none;
+        }
+        &:focus {
+            outline: 0;
+        }
+    }
 }
 
-.mainButt-myBtt {
-    height: 100%;
-    width: 100%;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 18px;
-    line-height: 25px;
-    cursor:pointer;
-    color: $small_text;
-    background-color: $backg_col;
-    border: none;
-    &:hover {
-        background-color: $main_col;
-        border: none;
-    }
-    &:active {
-        background-color: $main_col;
-        border-color: none;
-    }
-    &:focus {
-        outline: 0;
-    }
-}
+
 
 .mainLogo {
     display: inline-block;
     height: 100%;
     width: 320px;
-}
-
-.mainLogo > img {
-    position: absolute;
-    top: 15%;
-    height: 48px;
+    img {
+        position: absolute;
+        top: 15%;
+        height: 48px;
+    }
 }
 
 .mod {
@@ -75,223 +75,233 @@ hr {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.4);
-}
-
-.mod-cont {
-    color: $small_text;
-    border-radius: 4.5px;
-    background-color: $backg_col;
-    margin: 12vh auto;
-    padding: 20px;
-    border: 1px solid #888; 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: 420px;
-}
-
-.mod-cont-close {
-    margin-right: 0px;
-    margin-top: -10px;
-    color: $main_col;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    &:hover, &:focus {  
-        color: $onfocus_col;
-        text-decoration: none;
-        cursor: pointer;
-    }
-}
-
-.mod-cont-bigLogo {
-    width: 150px;
-    height: 150px;
-    text-align: center;
-    margin: auto;
-}
-
-
-.mod-cont-bigLogo-img {
-    width: 100%;
-    height: 100%;
-    &:hover, &:focus {
-        filter: invert(28%) sepia(99%) saturate(7181%) hue-rotate(360deg) brightness(78%) contrast(113%);
-    }
-}
-
-.mod-cont-h2 {
-    height: 45px;
-    text-align: center;
-    margin: auto;
-    margin-top: 15px;
-    color: $main_col;
-    text-transform: uppercase;
-}
-
-.mod-cont-reg {
-    margin: 15px auto;
-    margin-bottom: 8px;
-    width: 85%;
-    text-align: center;
-    p {
-        width: 98%;
-        margin: 0;
-        margin-top: -10px;
-        font-size: 12px;
-        line-height: 16px;
-        text-align: right;
-    }
-    a {
-        &:hover, &:focus {
-            color: $main_col;
-            cursor: pointer; 
-        }
-    }
-    i {
-        font-size: 0.5em;
+    &-cont {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
         color: $small_text;
-    }
-}
-
-.mod-cont-reg-inputs {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 40px;
-    border: 1px solid $lines_color;
-    border-radius: 4px;
-    margin: 15px auto;
-}
-
-.mod-cont-reg-inputs-input {
-    flex-basis: 80%;
-    padding: 2px;
-    padding-left: 4px;
-    border-left: 1px solid $lines_color;
-}
-
-.mod-cont-reg-inputs-icon {
-    flex-basis: 12%;
-    i {
-        font-size: 1.1em;
-    }
-}
-
-.mod-cont-error {
-    visibility: hidden;
-    width: 85%;
-    margin: 10px auto;
-    text-align: center;
-    p {
-        font-size: 12px;
-        color: $main_col;
-    }
-}
-
-.mod-cont-reg-inputs-input-field {
-    color: $transp_text;
-    background-color: $backg_col;
-    margin: 0px auto;
-    width: 95%;
-    border: none;
-    height: 25px; 
-    -webkit-box-shadow: inset 0 0 0 50px $backg_col;
-    -webkit-text-fill-color: $transp_text;
-    &:focus::placeholder{
-       color: transparent;
-  }
-    &:focus {
-        outline: none;
-  }
-}
-
-.mod-cont-bttnLogin {    
-    margin: 0 auto;
-    margin-bottom: 20px;
-    width: 85%;
-    text-align: center;
-    a {
-        color: $main_col;
-        text-transform: uppercase;
-        &:hover, &:focus {
-            color: $onfocus_col;
-            cursor: pointer; 
+        border-radius: 4.5px;
+        background-color: $backg_col;
+        margin-top: 12vh;
+        padding: 20px;
+        border: 1px solid #888; 
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 420px;
+        &-close {
+            margin-right: 0px;
+            margin-top: -10px;
+            color: $main_col;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            &:hover, &:focus {  
+                color: $onfocus_col;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+        &-bigLogo {
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            margin: auto;
+            &-img {
+                width: 100%;
+                height: 100%;
+                &:hover, &:focus {
+                    filter: invert(28%) sepia(99%) saturate(7181%) hue-rotate(360deg) brightness(78%) contrast(113%);
+                }
+            }
+        }
+        &-h2 {
+            height: 45px;
+            text-align: center;
+            margin: auto;
+            margin-top: 15px;
+            color: $main_col;
+            text-transform: uppercase;
+        }
+        &-reg {
+            margin: 15px auto;
+            margin-bottom: 8px;
+            width: 85%;
+            text-align: center;
+            p {
+                width: 98%;
+                margin: 0;
+                margin-top: -10px;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: right;
+            }
+            a {
+                &:hover, &:focus {
+                    color: $main_col;
+                    cursor: pointer; 
+                }
+            }
+            i {
+                font-size: 0.5em;
+                color: $small_text;
+            }
+            &-inputs {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 40px;
+                border: 1px solid $lines_color;
+                border-radius: 4px;
+                margin: 25px auto;
+                &-input {
+                    flex-basis: 80%;
+                    padding: 2px;
+                    padding-left: 4px;
+                    border-left: 1px solid $lines_color;
+                    &-field {
+                        color: $transp_text;
+                        background-color: $backg_col;
+                        margin: 0px auto;
+                        width: 95%;
+                        border: none;
+                        height: 25px; 
+                        -webkit-box-shadow: inset 0 0 0 50px $backg_col;
+                        -webkit-text-fill-color: $transp_text;
+                        &:focus::placeholder{
+                           color: transparent;
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+                &-icon {
+                    flex-basis: 12%;
+                    i {
+                        font-size: 1.1em;
+                    }
+                }
+            }
+        }
+        &-error {
+            visibility: hidden;
+            width: 85%;
+            margin: 10px auto;
+            text-align: center;
+            p {
+                font-size: 12px;
+                color: $main_col;
+            }
+        }
+        &-bttnLogin {    
+            margin: 0 auto;
+            margin-bottom: 20px;
+            width: 85%;
+            text-align: center;
+            a {
+                color: $main_col;
+                text-transform: uppercase;
+                &:hover, &:focus {
+                    color: $onfocus_col;
+                    cursor: pointer; 
+                }
+            }
+            p {
+                margin: 0;
+                margin-top: 7px;
+                font-size: 14px;
+                line-height: 19px;
+            }           
+            &-login {
+                width: 100%; 
+                height: 40px;
+                background-color: rgba(232, 74, 95, 0.5);
+                text-align: center;
+                border-radius: 4px;
+                font-size: 18px;
+                line-height: 25px;
+                cursor: pointer;
+                border: none;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.5);
+                outline: none;
+            }
+        }        
+        &-orlines {
+            display: flex; 
+            align-items: center;
+            width: 85%;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            flex-direction: row;
+            justify-content: space-between;
+            &-lines {
+                width: 40%;
+                margin: 0;
+                text-align: center;
+                h2 {
+                    font-weight: 400;
+                    margin: 0;
+                    color: #eeeeee;
+                    font-size: 22px;
+                    line-height: 30px;
+                }
+                hr {
+                    margin: 0;
+                    border: 1px solid $lines_color;
+                }
+            }
+            &-or {
+                @extend .mod-cont-orlines-lines;
+                width: 15%;
+            }
+        }   
+        &-baricon {
+            @extend .mod-cont-orlines;
+            width: 40%;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            a {
+            
+                &:hover, &:focus {
+                    color: $main_col;
+                    cursor: pointer;
+                } 
+            }
         }
     }
-    p {
-        margin: 0;
-        margin-top: 7px;
+}
+
+.create {
+    &-h2 {
+        margin-bottom: 35px;
+    }
+    &-mainButt {
+        button {
+            text-transform: none;
+            font-size: 18px;
+            line-height: 25px;
+        }
+        p {
+            font-size: 13px;
+            line-height: 18px;
+            text-align: center;
+        }
+        a {
+            text-transform: none;
+        }
+    }
+    &-loginLink {
+        @extend .mod-cont-bttnLogin;
+        text-align: center;
         font-size: 14px;
         line-height: 19px;
     }
 }
 
-.mod-cont-bttnLogin-login {
-    width: 100%; 
-    height: 40px;
-    background-color: rgba(232, 74, 95, 0.5);
-    text-align: center;
-    border-radius: 4px;
-    font-size: 18px;
-    line-height: 25px;
-    cursor: pointer;
-    border: none;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
-    outline: none;
-}
-
-.mod-cont-orlines {
-    display: flex; 
-    align-items: center;
-    width: 85%;
-    margin: 0 auto;
-    margin-bottom: 40px;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.mod-cont-orlines-lines {
-    width: 40%;
-    margin: 0;
-    text-align: center;
-    h2 {
-        font-weight: 400;
-        margin: 0;
-        color: #eeeeee;
-        font-size: 22px;
-        line-height: 30px;
-    }
-    hr {
-        margin: 0;
-        border: 1px solid $lines_color;
-    }
-}
-
-.mod-cont-orlines-or {
-    @extend .mod-cont-orlines-lines;
-    width: 15%;
-}
-
-.mod-cont-baricon {
-    @extend .mod-cont-orlines;
-    width: 40%;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    a {
-    
-        &:hover, &:focus {
-            color: $main_col;
-            cursor: pointer;
-        } 
-    }
-}
-
 .fab {
     font-size: 2.2em;
-}
-
-.modal-new_acc {
-    @extend .mod-cont;
 }
 
 @media (max-width: $small) {
@@ -311,3 +321,4 @@ hr {
         display: none;
     }
 }
+

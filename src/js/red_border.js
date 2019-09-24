@@ -1,5 +1,5 @@
-var inp1 = document.getElementsByClassName("login-input-field")[0];
-var inp2 = document.getElementsByClassName("login-input-field")[1];
+var inp1 = document.getElementsByClassName("mod-cont-reg-inputs-input-field")[0];
+var inp2 = document.getElementsByClassName("mod-cont-reg-inputs-input-field")[1];
 var email = document.getElementById('email');
 var pass = document.getElementById('pass');
 

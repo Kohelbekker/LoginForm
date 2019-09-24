@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/dist/app.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <title>HackAcademy</title> 
@@ -26,7 +25,7 @@
         
         <div id="myModal" class="mod">
                 
-                <div class="mod-cont">
+                <div id="loginMod" class="mod-cont">
                     <span class="mod-cont-close">&times;</span>
                     
                     <div class="mod-cont-bigLogo">
@@ -46,7 +45,7 @@
                             </div>
 
                             <div class="mod-cont-reg-inputs-input">
-                                <input autofocus onkeyup="Test" type="text" name="email" id="email" class="mod-cont-reg-inputs-input-field" placeholder="Email" required> 
+                                <input autofocus type="text" name="email" id="email" class="mod-cont-reg-inputs-input-field" placeholder="Email" required> 
                             </div> 
 
                         </div>
@@ -106,12 +105,78 @@
                         </div>
                    
                     </div>
-        
+                
+                </div>
             </div>
+
+
+            <div id="myReg" class="mod create">
+                
+                <div id="createMod" class="mod-cont">
+                <span class="mod-cont-close">&times;</span>
+                
+                <div class="mod-cont-bigLogo">
+                    <img class="mod-cont-bigLogo-img" src="./src/images/Rectangle.png" alt="">
+                </div>
+
+                <div>
+                    <h2 class="mod-cont-h2 create-h2">Create your account</h2>
+                </div>
+
+                <div class="mod-cont-reg">
+                    
+                    <div id="input1" class="mod-cont-reg-inputs">
+                       
+                        <div class="mod-cont-reg-inputs-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div class="mod-cont-reg-inputs-input">
+                            <input autofocus type="text" name="email" id="signup_email" class="mod-cont-reg-inputs-input-field" placeholder="Email" required> 
+                        </div> 
+
+                    </div>
+
+                    <div id="input2" class="mod-cont-reg-inputs">
+                                                   
+                        <div class="mod-cont-reg-inputs-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        
+                        <div class="mod-cont-reg-inputs-input">
+                            <input autofocus type="password" name="pass" id="signup_pass" class="mod-cont-reg-inputs-input-field" placeholder="Password" required>
+                       
+                        </div>
+                    </div>
+                   
+                    <div id="input3" class="mod-cont-reg-inputs">
+                       
+                        <div class="mod-cont-reg-inputs-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+
+                        <div class="mod-cont-reg-inputs-input">
+                            <input autofocus type="text" name="email" id="signup_confpass" class="mod-cont-reg-inputs-input-field" placeholder="Confirm password" required> 
+                        </div> 
+
+                    </div>
+                
+                <div class="mod-cont-bttnLogin create-mainButt">
+                    <button id="Login" class="mod-cont-bttnLogin-login" disabled>Create Account</button>
+                    <p>By creating an account, I accept Hackacademy <a>Terms of Use</a> and <a>Privacy Policy</a>.</p>
+                </div>
+
+                <div id="Error" class="mod-cont-error">
+                    <p>Invalid Email or Password. Please, check if your password has at least one uppercase character, lowercase character, special symbol and digit. Summarily your password shouldn't be less than 8 charcters.</p>
+                </div>
+                
+            </div>
+            <p class="create-loginLink">Already have an account? <a>LOGIN</a></p>
+
+        </div>
             
     </main>
-    <script src="./src/js/modal.js"></script>
-    <script src="./src/js/red_border.js"></script>
+        <script src="bundle.js"></script>
 </body>
 </html>
 
