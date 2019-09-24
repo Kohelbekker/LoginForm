@@ -1,5 +1,6 @@
 $backg_col: #2a363b;
 $main_col: #E84A5F;
+$html_color: #F4F4F4;
 $small_text: white;
 $onfocus_col: red;
 $transp_text: rgba(238, 238, 238, 0.7);
@@ -9,6 +10,7 @@ $small: 520px;
 html body {
     margin: 0; 
     font-family: 'Noto Sans', sans-serif;
+    background-color: $html_color; 
 }
 
 header { 
@@ -294,9 +296,19 @@ hr {
     }
     &-loginLink {
         @extend .mod-cont-bttnLogin;
+        margin-bottom: -5px;
         text-align: center;
         font-size: 14px;
         line-height: 19px;
+    }
+}
+
+.reset {
+    @extend .mod;
+    display: block;
+    background-color: rgba(0,0,0,0.0);
+    &-cont {
+        padding-bottom: 0px;
     }
 }
 

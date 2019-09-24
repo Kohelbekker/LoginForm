@@ -1,7 +1,7 @@
-var inp1 = document.getElementsByClassName("mod-cont-reg-inputs-input-field")[0];
-var inp2 = document.getElementsByClassName("mod-cont-reg-inputs-input-field")[1];
-var email = document.getElementById('email');
-var pass = document.getElementById('pass');
+let inp1 = document.getElementsByClassName("mod-cont-reg-inputs-input-field")[0];
+let inp2 = document.getElementsByClassName("mod-cont-reg-inputs-input-field")[1];
+let email = document.getElementById('email');
+let pass = document.getElementById('pass');
 
 function Test() {
     let re="KEK LOL";

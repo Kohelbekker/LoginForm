@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <title>HackAcademy</title> 
+
     <link rel="shortcut icon" type="" href="./src/images/favicon.png"/>
 </head>
 <body>
@@ -113,7 +114,7 @@
             <div id="myReg" class="mod create">
                 
                 <div id="createMod" class="mod-cont">
-                <span class="mod-cont-close">&times;</span>
+                <span class="mod-cont-close" onclick="close_sign('myReg')">&times;</span>
                 
                 <div class="mod-cont-bigLogo">
                     <img class="mod-cont-bigLogo-img" src="./src/images/Rectangle.png" alt="">
@@ -174,9 +175,46 @@
             <p class="create-loginLink">Already have an account? <a>LOGIN</a></p>
 
         </div>
+    </div>   
+    <div id="myForgot" class="mod create">
+        
+        <div id="createMod" class="mod-cont">
+        <span class="mod-cont-close">&times;</span>
+        
+        <div class="mod-cont-bigLogo">
+            <img class="mod-cont-bigLogo-img" src="./src/images/Rectangle.png" alt="">
+        </div>
+
+        <div>
+            <h2 class="mod-cont-h2 create-h2">Forgot password</h2>
+        </div>
+
+        <div class="mod-cont-reg">
             
-    </main>
-        <script src="bundle.js"></script>
+            <div id="input1" class="mod-cont-reg-inputs">
+               
+                <div class="mod-cont-reg-inputs-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="mod-cont-reg-inputs-input">
+                    <input autofocus type="text" name="email" id="forgot_email" class="mod-cont-reg-inputs-input-field" placeholder="Email" required> 
+                </div> 
+
+            </div>
+        
+        <div class="mod-cont-bttnLogin create-mainButt">
+            <button id="Login" class="mod-cont-bttnLogin-login" disabled>Reset Password</button>
+        </div>
+        
+    </div>
+    <p class="create-loginLink">Back to <a>LOGIN</a></p>
+
+</div>     
+
+</main>
+
+<script src="bundle.js"></script>
 </body>
 </html>
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <title>HackAcademy</title> 
+
+    <link rel="shortcut icon" type="" href="./src/images/favicon.png"/>
+</head>
+<body>
+    
+    <header>
+   
+        <div class="mainLogo">
+            <img src="/src/images/logo.svg" alt="logo">
+        </div>
+
+        <div class="mainButt">
+            <button id="myBtn" class="mainButt-myBtt">Login</button> 
+        </div> 
+   
+    </header>
+
+    <main>
+        
+            <div class="reset">
+                
+                <div id="createReset" class="mod-cont reset-cont">
+                
+                <div class="mod-cont-bigLogo">
+                    <img class="mod-cont-bigLogo-img" src="./src/images/Rectangle.png" alt="">
+                </div>
+
+                <div>
+                    <h2 class="mod-cont-h2 create-h2">Reset Password</h2>
+                </div>
+
+                <div class="mod-cont-reg">
+                    
+                    <div id="reset_input" class="mod-cont-reg-inputs">
+                                                   
+                        <div class="mod-cont-reg-inputs-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        
+                        <div class="mod-cont-reg-inputs-input">
+                            <input autofocus type="password" name="pass" id="reset_pass" class="mod-cont-reg-inputs-input-field" placeholder="Password" required>
+                       
+                        </div>
+                    </div>
+                   
+                    <div id="reset_input2" class="mod-cont-reg-inputs">
+                       
+                        <div class="mod-cont-reg-inputs-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+
+                        <div class="mod-cont-reg-inputs-input">
+                            <input autofocus type="text" name="email" id="reset_confpass" class="mod-cont-reg-inputs-input-field" placeholder="Confirm password" required> 
+                        </div> 
+
+                    </div>
+                
+                <div class="mod-cont-bttnLogin create-mainButt">
+                    <button id="Reset" class="mod-cont-bttnLogin-login" disabled>Reset Password</button>
+            </div>
+        </div>   
+</main>
+
+<script src="bundle.js"></script>
+</body>
+</html>

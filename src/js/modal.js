@@ -1,7 +1,6 @@
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("mod-cont-close")[1];
-
+let modal = document.getElementById("myForgot");
+let btn = document.getElementById("myBtn");
+let span = document.getElementsByClassName("mod-cont-close")[0];
 
 btn.onclick = function() {
   modal.style.display = "block";
@@ -14,5 +13,5 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
-  }
+    }
 }
