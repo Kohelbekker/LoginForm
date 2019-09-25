@@ -194,6 +194,7 @@ hr {
             p {
                 font-size: 12px;
                 color: $main_col;
+                text-align: center;
             }
         }
         &-bttnLogin {    
@@ -301,6 +302,9 @@ hr {
         font-size: 14px;
         line-height: 19px;
     }
+    &-noMatch {
+        position: absolute;
+    }
 }
 
 .reset {
@@ -310,6 +314,11 @@ hr {
     &-cont {
         padding-bottom: 0px;
     }
+}
+
+.forgot {
+    @extend .create-noMatch;
+    margin-top: -50px;
 }
 
 .fab {

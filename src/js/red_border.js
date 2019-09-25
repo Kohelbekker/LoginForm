@@ -1,78 +1,125 @@
-let inp1 = document.getElementsByClassName("mod-cont-reg-inputs-input-field")[0];
-let inp2 = document.getElementsByClassName("mod-cont-reg-inputs-input-field")[1];
-let email = document.getElementById('email');
-let pass = document.getElementById('pass');
+window.input_focus = (container_id) => {
+    document.getElementById(container_id).style.border = "1px solid #E84A5F";
+}
 
-function Test() {
-    let re="KEK LOL";
-    console.log(re);
-    console.log("WASAP?");
+window.loginInput_blur = (container_id) => {
+    checkLogin();
+    document.getElementById(container_id).style.border = "1px solid hsla(0,0%,93.3%,.2)";
+}
+
+window.regInput_blur = (container_id) => {
+    checkReg();
+    document.getElementById(container_id).style.border = "1px solid hsla(0,0%,93.3%,.2)";
+}
+
+
+window.forgotInput_blur = (container_id) => {
+    checkForgot();
+    document.getElementById(container_id).style.border = "1px solid hsla(0,0%,93.3%,.2)";
 }
 
 function validateEmail(email) {
     let re = /[\w._%+-]+@[\w.-]+\.[a-zA-z]{2,4}$/;
-    return re.test(String(email).toLowerCase());
+    return (email.length > 0) ? (re.test(String(email).toLowerCase())) : true;
 }
 
 function validatePassword(pass) {
     let re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
-    return re.test(String(pass));
+    return (pass.length > 0) ? (re.test(String(pass))) : true;
 }
 
-email.onkeyup = () => {
-    let Log_btt = document.getElementById('Login');
+function checkLogin() {
+    let email = document.getElementById('email');
+    let pass = document.getElementById('pass');
+    let result_email = validateEmail(email.value);
+    let result_pass = validatePassword(pass.value);
 
-    if(validatePassword(pass) === false || validateEmail(email) === false) {
-        Log_btt.disabled = true;
-        Log_btt.style.backgroundColor = "rgba(232, 74, 95, 0.5)";
-        Log_btt.style.color = "hsla(0,0%,100%,.5)";
-    } else {
-        Log_btt.disabled = false;
-        Log_btt.style.backgroundColor = "#E84A5F";
-        Log_btt.style.color = "hsla(0,0%,100%,1)";
-    }
-}
-
-pass.onkeyup = () => {
-    let Log_btt = document.getElementById('Login');
-
-    if(validatePassword(pass.value) === false || validateEmail(email.value) === false) {
-        Log_btt.disabled = true;
-        Log_btt.style.backgroundColor = "rgba(232, 74, 95, 0.5)";
-        Log_btt.style.color = "hsla(0,0%,100%,.5)";
-    } else {
-        Log_btt.disabled = false;
-        Log_btt.style.backgroundColor = "#E84A5F";
-        Log_btt.style.color = "hsla(0,0%,100%,1)";
-    }
-}
-
-inp1.onfocus = () => {
-    document.getElementById("input1").style.border = "1px solid #E84A5F";
-}
-
-inp1.onblur = () => {
-    let result = validateEmail(email.value);
-
-    if (result === false && email.value.length > 0) {
+    if (result_email === false || result_pass === false) {
         document.getElementById('Error').style.visibility = "visible";
-    } else if (validatePassword(pass.value) === true || pass.value.length == 0){
+    } else {
         document.getElementById('Error').style.visibility = "hidden";
     }
-    document.getElementById("input1").style.border = "1px solid hsla(0,0%,93.3%,.2)";
 }
 
-inp2.onfocus = () => {
-    document.getElementById("input2").style.border = "1px solid #E84A5F";
-}
+function checkReg() {
+    let email = document.getElementById('signup_email');
+    let pass = document.getElementById('signup_pass');
+    let rePass = document.getElementById('signup_confpass');
+    let result_email = validateEmail(email.value);
+    let result_pass = validatePassword(pass.value);
+    let result_rePass = validatePassword(rePass.value);
 
-inp2.onblur = () => {
-    let result = validatePassword(pass.value);
-
-    if (result === false && pass.value.length > 0) {
-        document.getElementById('Error').style.visibility = "visible";
-    } else if (validateEmail(email.value) === true || email.value.length == 0) {
-        document.getElementById('Error').style.visibility = "hidden";
+    if (result_email === false || result_pass === false || result_rePass === false ||
+        (pass.value !== rePass.value && rePass.value.length > 0 && pass.value.length > 0)) {
+        if (rePass.value != pass.value && rePass.value.length > 0 && pass.value.length > 0) {
+            document.getElementById('noMatch').style.visibility = "visible";
+            document.getElementById('regError').style.visibility = "hidden";
+        } else {
+            document.getElementById('regError').style.visibility = "visible";
+            document.getElementById('noMatch').style.visibility = "hidden";
+        }
+    } else {
+        document.getElementById('regError').style.visibility = "hidden";
+        document.getElementById('noMatch').style.visibility = "hidden";
     }
-    document.getElementById("input2").style.border = "1px solid hsla(0,0%,93.3%,.2)";
 }
+
+function checkForgot() {
+    let email = document.getElementById('forgot_email');
+    let result_email = validateEmail(email.value);
+
+    if (result_email === false) {
+        document.getElementById('noForgot').style.visibility = "visible";
+    } else {
+        document.getElementById('noForgot').style.visibility = "hidden";
+    }
+}
+
+window.LoginBttn = () => {
+    let bttn = document.getElementById('Login');
+    let pass = document.getElementById('pass');
+    let email = document.getElementById('email');
+
+    if (validatePassword(pass.value) === false || validateEmail(email.value) === false || pass.value.length === 0 || email.value.length === 0) {
+        bttn.disabled = true;
+        bttn.style.backgroundColor = "rgba(232, 74, 95, 0.5)";
+        bttn.style.color = "hsla(0,0%,100%,.5)";
+    } else {
+        bttn.disabled = false;
+        bttn.style.backgroundColor = "#E84A5F";
+        bttn.style.color = "hsla(0,0%,100%,1)";
+    }
+}
+
+window.RegBttn = () => {
+    let email = document.getElementById('signup_email');
+    let pass = document.getElementById('signup_pass');
+    let rePass = document.getElementById('signup_confpass');
+    let bttn = document.getElementById('CreateAccount');
+
+    if (validatePassword(pass.value) === false || validateEmail(email.value) === false || pass.value.length === 0 || email.value.length === 0 || pass.value !== rePass.value) {
+        bttn.disabled = true;
+        bttn.style.backgroundColor = "rgba(232, 74, 95, 0.5)";
+        bttn.style.color = "hsla(0,0%,100%,.5)";
+    } else {
+        bttn.disabled = false;
+        bttn.style.backgroundColor = "#E84A5F";
+        bttn.style.color = "hsla(0,0%,100%,1)";
+    }
+}
+
+window.createBttn = () => {
+    let email = document.getElementById('forgot_email');
+    let bttn = document.getElementById('ResetPassword');
+
+    if (validateEmail(email.value) === false || email.value.length === 0) {
+        bttn.disabled = true;
+        bttn.style.backgroundColor = "rgba(232, 74, 95, 0.5)";
+        bttn.style.color = "hsla(0,0%,100%,.5)";
+    } else {
+        bttn.disabled = false;
+        bttn.style.backgroundColor = "#E84A5F";
+        bttn.style.color = "hsla(0,0%,100%,1)";
+    }
+}
+

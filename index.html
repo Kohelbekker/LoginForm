@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <title>HackAcademy</title> 
 
+    <script src="bundle.js"></script>
     <link rel="shortcut icon" type="" href="./src/images/favicon.png"/>
 </head>
 <body>
@@ -26,8 +27,8 @@
         
         <div id="myModal" class="mod">
                 
-                <div id="loginMod" class="mod-cont">
-                    <span class="mod-cont-close">&times;</span>
+                <div id="loginMod" class="mod-cont" onkeyup="LoginBttn()">
+                    <span class="mod-cont-close" onclick="span('myModal')">&times;</span>
                     
                     <div class="mod-cont-bigLogo">
                         <img class="mod-cont-bigLogo-img" src="./src/images/Rectangle.png" alt="">
@@ -39,31 +40,36 @@
 
                     <div class="mod-cont-reg">
                         
-                        <div id="input1" class="mod-cont-reg-inputs">
+                        <form>
+
+                            <div id="input1" class="mod-cont-reg-inputs">
                            
-                            <div class="mod-cont-reg-inputs-icon">
-                                <i class="fas fa-user"></i>
+                                <div class="mod-cont-reg-inputs-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+
+                                <div class="mod-cont-reg-inputs-input">
+                                        <input autofocus autocomplete="on" type="text" name="email" id="email" class="mod-cont-reg-inputs-input-field" onfocus="input_focus('input1')" onblur="loginInput_blur('input1')" placeholder="Email" required> 
+                                </div> 
+
                             </div>
 
-                            <div class="mod-cont-reg-inputs-input">
-                                <input autofocus type="text" name="email" id="email" class="mod-cont-reg-inputs-input-field" placeholder="Email" required> 
-                            </div> 
+                            <div id="input2" class="mod-cont-reg-inputs">
+                                                           
+                                <div class="mod-cont-reg-inputs-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                
+                                <div class="mod-cont-reg-inputs-input">
+                                        <input autofocus autocomplete="on" type="password" name="pass" id="pass" class="mod-cont-reg-inputs-input-field" onfocus="input_focus('input2')" onblur="loginInput_blur('input2')" placeholder="Password" required>
+
+                                </div>
 
                         </div>
 
-                        <div id="input2" class="mod-cont-reg-inputs">
-                                                       
-                            <div class="mod-cont-reg-inputs-icon">
-                                <i class="fas fa-lock"></i>
-                            </div>
-                            
-                            <div class="mod-cont-reg-inputs-input">
-                                <input autofocus type="password" name="pass" id="pass" class="mod-cont-reg-inputs-input-field" placeholder="Password" required>
-                           
-                            </div>
-                        </div>
-                        
-                        <p><a>Forgot Password?</a></p>
+                    </form
+                    >
+                        <p><a onclick="go_to_forgot()">Forgot Password?</a></p>
                     </div>
                     
                     <div id="Error" class="mod-cont-error">
@@ -72,7 +78,7 @@
 
                     <div class="mod-cont-bttnLogin">
                         <button id="Login" class="mod-cont-bttnLogin-login" disabled>Login</button>
-                        <p>Do not have an account? <a>Signup</a></p>
+                        <p>Do not have an account? <a onclick="go_to_createAcc()">Signup</a></p>
                     </div>
 
                     <div class="mod-cont-orlines">
@@ -113,8 +119,8 @@
 
             <div id="myReg" class="mod create">
                 
-                <div id="createMod" class="mod-cont">
-                <span class="mod-cont-close" onclick="close_sign('myReg')">&times;</span>
+                <div id="createMod" class="mod-cont" onkeyup="RegBttn()">
+                <span class="mod-cont-close" onclick="span('myReg')">&times;</span>
                 
                 <div class="mod-cont-bigLogo">
                     <img class="mod-cont-bigLogo-img" src="./src/images/Rectangle.png" alt="">
@@ -125,61 +131,69 @@
                 </div>
 
                 <div class="mod-cont-reg">
-                    
-                    <div id="input1" class="mod-cont-reg-inputs">
+                     
+                    <form>
+
+                        <div id="input3" class="mod-cont-reg-inputs">
+                      
+                            <div class="mod-cont-reg-inputs-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+
+                            <div class="mod-cont-reg-inputs-input">
+                                <input autofocus autocomplete="on" type="text" name="email" id="signup_email" class="mod-cont-reg-inputs-input-field" onfocus="input_focus('input3')" onblur="regInput_blur('input3')" placeholder="Email" required> 
+                            </div> 
+
+                        </div>
+
+                        <div id="input4" class="mod-cont-reg-inputs">
+                                                       
+                            <div class="mod-cont-reg-inputs-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            
+                            <div class="mod-cont-reg-inputs-input">
+                                <input autofocus autocomplete="on" type="password" name="pass" id="signup_pass" class="mod-cont-reg-inputs-input-field"  onfocus="input_focus('input4')" onblur="regInput_blur('input4')" placeholder="Password" required>
+                            </div>
+
+                        </div>
                        
-                        <div class="mod-cont-reg-inputs-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
+                        <div id="input5" class="mod-cont-reg-inputs">
+                           
+                            <div class="mod-cont-reg-inputs-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
 
-                        <div class="mod-cont-reg-inputs-input">
-                            <input autofocus type="text" name="email" id="signup_email" class="mod-cont-reg-inputs-input-field" placeholder="Email" required> 
-                        </div> 
-
-                    </div>
-
-                    <div id="input2" class="mod-cont-reg-inputs">
-                                                   
-                        <div class="mod-cont-reg-inputs-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
+                            <div class="mod-cont-reg-inputs-input">
+                                <input autofocus autocomplete="on" type="password" name="email" id="signup_confpass" class="mod-cont-reg-inputs-input-field" onfocus="input_focus('input5')" onblur="regInput_blur('input5')" placeholder="Confirm password" required> 
+                            </div> 
                         
-                        <div class="mod-cont-reg-inputs-input">
-                            <input autofocus type="password" name="pass" id="signup_pass" class="mod-cont-reg-inputs-input-field" placeholder="Password" required>
-                       
                         </div>
-                    </div>
-                   
-                    <div id="input3" class="mod-cont-reg-inputs">
-                       
-                        <div class="mod-cont-reg-inputs-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
+               
+                    </form>
 
-                        <div class="mod-cont-reg-inputs-input">
-                            <input autofocus type="text" name="email" id="signup_confpass" class="mod-cont-reg-inputs-input-field" placeholder="Confirm password" required> 
-                        </div> 
-
-                    </div>
-                
                 <div class="mod-cont-bttnLogin create-mainButt">
-                    <button id="Login" class="mod-cont-bttnLogin-login" disabled>Create Account</button>
+                    <button id="CreateAccount" class="mod-cont-bttnLogin-login" disabled>Create Account</button>
                     <p>By creating an account, I accept Hackacademy <a>Terms of Use</a> and <a>Privacy Policy</a>.</p>
                 </div>
+                
+                <div id="noMatch" class="mod-cont-error create-noMatch">
+                    <p>No match between two passwords! Please, enter the same password in 'confirm' line as in the line above</p>
+                </div>
 
-                <div id="Error" class="mod-cont-error">
+                <div id="regError" class="mod-cont-error">
                     <p>Invalid Email or Password. Please, check if your password has at least one uppercase character, lowercase character, special symbol and digit. Summarily your password shouldn't be less than 8 charcters.</p>
                 </div>
                 
             </div>
-            <p class="create-loginLink">Already have an account? <a>LOGIN</a></p>
+            <p class="create-loginLink">Already have an account? <a onclick="go_to_login()">LOGIN</a></p>
 
         </div>
     </div>   
     <div id="myForgot" class="mod create">
         
-        <div id="createMod" class="mod-cont">
-        <span class="mod-cont-close">&times;</span>
+        <div id="createMod" class="mod-cont" onkeyup="createBttn()">
+        <span class="mod-cont-close" onclick="span('myForgot')">&times;</span>
         
         <div class="mod-cont-bigLogo">
             <img class="mod-cont-bigLogo-img" src="./src/images/Rectangle.png" alt="">
@@ -188,33 +202,41 @@
         <div>
             <h2 class="mod-cont-h2 create-h2">Forgot password</h2>
         </div>
+        
+        
+        <div id="noForgot" class="mod-cont-error forgot">
+            <p>Invalid email. Please, correct your Email address</p>
+        </div>
 
         <div class="mod-cont-reg">
-            
-            <div id="input1" class="mod-cont-reg-inputs">
-               
-                <div class="mod-cont-reg-inputs-icon">
-                    <i class="fas fa-user"></i>
+           
+            <form>
+
+                <div id="input6" class="mod-cont-reg-inputs">
+                   
+                    <div class="mod-cont-reg-inputs-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+
+                    <div class="mod-cont-reg-inputs-input">
+                        <input autofocus autocomplete="on" type="text" name="email" id="forgot_email" class="mod-cont-reg-inputs-input-field" onfocus="input_focus('input6')" onblur="forgotInput_blur('input6')" placeholder="Email" required> 
+                    </div> 
+
                 </div>
-
-                <div class="mod-cont-reg-inputs-input">
-                    <input autofocus type="text" name="email" id="forgot_email" class="mod-cont-reg-inputs-input-field" placeholder="Email" required> 
-                </div> 
-
-            </div>
         
+            </form>
+
         <div class="mod-cont-bttnLogin create-mainButt">
-            <button id="Login" class="mod-cont-bttnLogin-login" disabled>Reset Password</button>
+            <button id="ResetPassword" class="mod-cont-bttnLogin-login" disabled>Reset Password</button>
         </div>
         
     </div>
-    <p class="create-loginLink">Back to <a>LOGIN</a></p>
+    <p class="create-loginLink">Back to <a onclick="go_to_login()">LOGIN</a></p>
 
 </div>     
 
 </main>
 
-<script src="bundle.js"></script>
 </body>
 </html>
 
